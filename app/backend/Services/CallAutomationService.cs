@@ -70,6 +70,7 @@ namespace CustomerSupportServiceSample.Services
                 var createCallOptions = new CreateCallOptions(callInvite, callbackUri)
                 {
                     CognitiveServicesEndpoint = new Uri(cgsEndpoint),
+                    CallIntelligenceOptions = new CallIntelligenceOptions() { CognitiveServicesEndpoint = new Uri(cgsEndpoint) },
                     OperationContext = threadId
                 };
 
