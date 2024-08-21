@@ -66,7 +66,7 @@ export const AgentPage = (props: AgentPageProps): JSX.Element => {
     <div>
       <nav>
         <div className="agent-logo">
-          <b>Contoso</b> Energy | Technician
+          <b>Niagara</b> Bottling | Technician
         </div>
         <div>
           <button className="clear-history-btn" onClick={handleClearHistory}>
