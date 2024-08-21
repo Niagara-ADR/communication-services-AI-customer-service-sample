@@ -23,7 +23,7 @@ namespace CustomerSupportServiceSample.Services
         private const string EndCallPhraseToConnectAgent = "Sure, will send you the sms link to start the call with an expert. Thank you for calling, goodbye.";
         private const string EndCall = "Thank you for calling, goodbye.";
         private const string CustomerQueryTimeout = "I'm sorry, I wasn't quite able to hear that.";
-        private const string NoResponse = "I didn't hear any input from you. Thank you, Goodbye.";
+        private const string NoResponse = "I didn't hear any input from you.";
         private const string InvalidAudio = "Invalid speech phrase or tone detected, Disconnecting the call. Thank you!";
 
         public CallAutomationService(
