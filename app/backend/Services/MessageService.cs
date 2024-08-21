@@ -22,7 +22,7 @@ namespace CustomerSupportServiceSample.Services
             // there is no need to embed call identifier to url. So the URL is static
             var callJoinUrl = $"{configuration["HostUrl"]}?callerType=Customer";
             smsMessage = string.Format(
-                "To start a call with the Power Company Technician, please click on this link: {0}",
+                "To start a call with an internal expert, please click on this link: {0}",
                 callJoinUrl);
         }
 
