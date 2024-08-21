@@ -41,13 +41,9 @@ export default (): JSX.Element => {
       <div className="home-container">
         <nav>
           <div className="logo">
-            <b>Contoso</b> Energy
+            <b>Niagara</b> Bottling
           </div>
           <div className="menu-items">
-            <a href="#">Menu</a>
-            <a href="#">Pay Bill</a>
-            <a href="#">Outages</a>
-            <a href="#">Support</a>
             <a href="#" className="search">
               Search
             </a>
@@ -65,12 +61,12 @@ export default (): JSX.Element => {
           </div>
         </nav>
         <div className="content">
-          <p className="title">Looking for ways to save? Try solar</p>
+          <p className="title">Looking for Support?</p>
           <hr />
-          <p className="subtitle">You may qualify for tax savings and other benefits.</p>
-          <p className="subtitle">Chat with customer support to learn more</p>
+          <p className="subtitle">...</p>
+          {chatData && <Chat {...chatData} userId={chatData.identity} />}
+          <p className="subtitle">Chat with customer support and connect/p>
         </div>
-        {chatData && <Chat {...chatData} userId={chatData.identity} />}
       </div>
     );
   };
