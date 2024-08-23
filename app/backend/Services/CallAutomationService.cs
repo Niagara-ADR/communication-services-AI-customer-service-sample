@@ -181,7 +181,7 @@ namespace CustomerSupportServiceSample.Services
 
             // Line 29: Logging the reason for failure
             logger.LogWarning("Recognize failed due to: {reason}", replyText);
-            await TranscribeBotVoice(replyText)
+            await TranscribeBotVoice(replyText);
 
             // Prepare and start recognizing again with the failure message
             var recognizeOptions = GetMediaRecognizeSpeechOptions(replyText, targetParticipant, recognizeFailedEvent.OperationContext!);
