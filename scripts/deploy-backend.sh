@@ -17,7 +17,7 @@ dotnet publish "./CustomerSupportServiceSample.csproj" -o "$publishfolder"
 (cd "$publishfolder" && zip -r ../app.zip .)
 
 # Deploy the ZIP archive to the Azure Web App using Azure CLI
-az webapp deploy --resource-group $AZURE_RESOURCE_GROUP --name $API_SERVICE_NAME --src-path "app.zip" --type zip
+az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $API_SERVICE_NAME --src "app.zip"
 
 # Clean up the ZIP archive
 rm -f "app.zip"
