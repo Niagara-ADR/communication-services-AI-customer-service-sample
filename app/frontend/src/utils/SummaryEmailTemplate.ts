@@ -69,7 +69,7 @@ export async function getEmailTemplate(summaryDetails: string | undefined) {
 <body>
     <div class="container">
         <div class="header">
-            <p class="header-text"><strong>Power</strong> Company</p>
+            <p class="header-text"><strong>Niagara</strong> bottling</p>
         </div>
         <div class="content">
             <p>${summaryDetails ? summaryDetails.replace(/\n/g, '<br>') : ''}</p>
