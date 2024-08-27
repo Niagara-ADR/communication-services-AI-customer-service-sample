@@ -307,7 +307,7 @@ namespace CustomerSupportServiceSample.Services
                 {
                     InterruptCallMediaOperation = false,
                     InterruptPrompt = true,
-                    InitialSilenceTimeout = TimeSpan.FromSeconds(20),
+                    InitialSilenceTimeout = TimeSpan.FromSeconds(120),
                     Prompt = playSource,
                     OperationContext = threadId,
                     EndSilenceTimeout = TimeSpan.FromMilliseconds(500),
