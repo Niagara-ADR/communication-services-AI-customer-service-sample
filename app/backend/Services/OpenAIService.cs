@@ -91,7 +91,7 @@ namespace CustomerSupportServiceSample.Services
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
                 Messages = {},
-                MaxTokens = 65,
+                MaxTokens = 100,
                 ChoiceCount = 1,
             };
 
