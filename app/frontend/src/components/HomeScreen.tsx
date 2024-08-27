@@ -64,7 +64,7 @@ export default (): JSX.Element => {
           <p className="title">Looking for Support?</p>
           <hr />
           <p className="subtitle">...</p>
-          <p className="subtitle">Chat with customer support and connect/p>
+          <p className="subtitle">Chat with customer support and connect</p>
         </div>
         {chatData && <Chat {...chatData} userId={chatData.identity} />}
       </div>
