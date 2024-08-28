@@ -301,7 +301,7 @@ namespace CustomerSupportServiceSample.Services
         {
             return $@"
             <speak version =1.0 xmlns='http://www.w3.org/2001/10/synthesis' xml:lan='en-US'
-                <voice name='{SpeechToTextVoice"'>
+                <voice name='{SpeechToTextVoice}'>
                     <prosody rate ='medium' >{content}</prosody>
                 </voice>
             </speak>";
