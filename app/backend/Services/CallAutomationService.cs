@@ -300,7 +300,7 @@ namespace CustomerSupportServiceSample.Services
         private static string CreateSsml(string content)
         {
             return $@"
-            <speak version =1.0 xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'
+            <speak version =1.0 xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
                 <voice name='{SpeechToTextVoice}'>
                     <prosody rate ='medium' >{content}</prosody>
                 </voice>
