@@ -309,7 +309,7 @@ namespace CustomerSupportServiceSample.Services
         
         private static CallMediaRecognizeSpeechOptions GetMediaRecognizeSpeechOptions(string content, string targetParticipant, string? threadId)
         {
-            var ssmlContent = CreateSsml(dynamicContent);
+            var ssmlContent = CreateSsml(content);
             var playSource = new TextSource(ssmlContent) { VoiceName = SpeechToTextVoice };
 
             var recognizeOptions =
