@@ -309,8 +309,8 @@ namespace CustomerSupportServiceSample.Services
         
         private static CallMediaRecognizeSpeechOptions GetMediaRecognizeSpeechOptions(string content, string targetParticipant, string? threadId)
         {
-            var ssmlContent = CreateSsml(content);
-            var playSource = new TextSource(ssmlContent) { VoiceName = SpeechToTextVoice };
+            var ssmlcontent = CreateSsml(content);
+            var playSource = new TextSource(ssmlcontent) { VoiceName = SpeechToTextVoice };
 
             var recognizeOptions =
                 new CallMediaRecognizeSpeechOptions(targetParticipant: new PhoneNumberIdentifier(targetParticipant))
@@ -328,9 +328,9 @@ namespace CustomerSupportServiceSample.Services
 
         private static PlayOptions GetPlaySpeechOptions(string content, string targetParticipant)
         {
-            var ssmlContent = CreateSsml(content);
+            var ssmlcontent = CreateSsml(content);
             return new PlayOptions(
-                playSource: new TextSource(ssmlContent) { VoiceName = SpeechToTextVoice },
+                playSource: new TextSource(ssmlcontent) { VoiceName = SpeechToTextVoice },
                 playTo: new[] { new PhoneNumberIdentifier(targetParticipant) });
         }
 
