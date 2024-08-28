@@ -328,7 +328,7 @@ namespace CustomerSupportServiceSample.Services
 
         private static PlayOptions GetPlaySpeechOptions(string content, string targetParticipant)
         {
-            var ssmlContent = CreateSsml(content)
+            var ssmlContent = CreateSsml(content);
             return new PlayOptions(
                 playSource: new TextSource(ssmlContent) { VoiceName = SpeechToTextVoice },
                 playTo: new[] { new PhoneNumberIdentifier(targetParticipant) });
