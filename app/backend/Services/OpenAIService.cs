@@ -80,6 +80,9 @@ namespace CustomerSupportServiceSample.Services
             // Chat models take a list of messages as input and return a model-generated message as output
             // First message is so called 'system message', which sets the behaviour of assistant
             var systemPrompt = string.Format(AnswerPromptSystemTemplate, userQuery, matchingDocs);
+            
+            // Append instruction for 50-word response
+            systemPrompt += "\nAnswer everything in 50 words or less.";
 
             // Step3: Prepare LLM query, startin with system message
             var chatCompletionsOptions = new ChatCompletionsOptions()
