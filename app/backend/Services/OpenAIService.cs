@@ -82,13 +82,13 @@ namespace CustomerSupportServiceSample.Services
             var systemPrompt = string.Format(AnswerPromptSystemTemplate, userQuery, matchingDocs);
             
             // Append instruction for 50-word response
-            systemPrompt += "\nAnswer everything in 50 words or less.";
+            systemPrompt += "\nSummarize everything in 50 words or less.";
 
             // Step3: Prepare LLM query, startin with system message
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
                 Messages = {},
-                MaxTokens = 100,
+                MaxTokens = 2000,
                 ChoiceCount = 1,
             };
 
