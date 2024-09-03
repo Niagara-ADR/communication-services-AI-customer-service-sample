@@ -293,21 +293,12 @@ namespace CustomerSupportServiceSample.Services
             return chatHistory;
         }
 
-        private static string CreateSsml(string content)
-        {
-            return $@"
-            <speak version =1.0 xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
-                <voice name='{SpeechToTextVoice}'>
-                    <prosody rate ='medium' >{content}</prosody>
-                </voice>
-            </speak>";
-        }
         
         private static CallMediaRecognizeSpeechOptions GetMediaRecognizeSpeechOptions(string content, string targetParticipant, string? threadId)
         {
             var ssmlcontent = CreateSsml(content);
             // var playSource = new TextSource(ssmlcontent) { VoiceName = SpeechToTextVoice };
-            var playsource = new SsmlSource(ssmlcontent);
+            var playsource = new TextSource(content);
 
             var recognizeOptions =
                 new CallMediaRecognizeSpeechOptions(targetParticipant: new PhoneNumberIdentifier(targetParticipant))
@@ -325,10 +316,10 @@ namespace CustomerSupportServiceSample.Services
 
         private static PlayOptions GetPlaySpeechOptions(string content, string targetParticipant)
         {
-            var ssmlcontent = CreateSsml(content);
+            // var ssmlcontent = CreateSsml(content);
             return new PlayOptions(
-                // playSource: new TextSource(ssmlcontent) { VoiceName = SpeechToTextVoice },
-                playSource: new SsmlSource(ssmlContent),
+                playSource: new TextSource(ssmlcontent) { VoiceName = SpeechToTextVoice },
+                playSource: new SsmlSource,
                 playTo: new[] { new PhoneNumberIdentifier(targetParticipant) });
         }
 
