@@ -19,7 +19,7 @@ namespace CustomerSupportServiceSample.Services
         private readonly string cgsEndpoint;
         private readonly string baseUrl;
         private const string SpeechToTextVoice = "en-US-NancyNeural";
-        private const string Greeting = "Hello, thanks for joining the call. I understand you're looking for support";
+        private const string Greeting = "Hello, thanks for joining Niagara Support. How can I help?";
         private const string EndCallPhraseToConnectAgent = "Sure, will connect you with an expert. Thank you for calling, goodbye.";
         private const string EndCall = "Thank you for calling, goodbye.";
         private const string CustomerQueryTimeout = "I'm sorry, I wasn't quite able to hear that.";
