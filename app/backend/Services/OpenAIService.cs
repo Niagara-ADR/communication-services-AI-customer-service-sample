@@ -106,7 +106,8 @@ namespace CustomerSupportServiceSample.Services
             // model can get confused with the conversation flow.
             history.Sort((h1, h2) => h1.CreatedOn.CompareTo(h2.CreatedOn));
 
-            foreach (var message in history)
+            var lastTenMessages = history.TakeLast(10);
+            foreach (var message in lastTenMessages)
             {
                 if (message.SenderDisplayName == "Bot" || message.SenderDisplayName == "VoiceBot")
                 {
