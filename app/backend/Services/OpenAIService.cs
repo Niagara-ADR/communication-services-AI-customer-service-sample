@@ -38,8 +38,8 @@ namespace CustomerSupportServiceSample.Services
         close this chat window. However, if you have further text queries during the
         call, feel free to continue this chat, and I'll assist you with the same
         context.'
-
         If {0} is not a question, respond like a friendly agent. If {0} is a question, in less than 50 words answer it using this content {1}.
+        Summarize everything in 40 words or less. Keep it concise. Do not exceed 350 characters. (Maximum Limit = 350 characters).
         """;
 
         private const string EmailSummaryPromptTemplate = """
@@ -82,13 +82,13 @@ namespace CustomerSupportServiceSample.Services
             var systemPrompt = string.Format(AnswerPromptSystemTemplate, userQuery, matchingDocs);
             
             // Append instruction for 50-word response
-            systemPrompt += "\nSummarize everything in 50 words or less.";
+            systemPrompt += "\nSummarize everything in 40 words or less.Keep it concise. Do not exceed 350 characters. (Maximum Limit = 350 characters)";
 
             // Step3: Prepare LLM query, startin with system message
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
                 Messages = {},
-                MaxTokens = 2000,
+                MaxTokens = 500,
                 ChoiceCount = 1,
             };
 
@@ -106,8 +106,7 @@ namespace CustomerSupportServiceSample.Services
             // model can get confused with the conversation flow.
             history.Sort((h1, h2) => h1.CreatedOn.CompareTo(h2.CreatedOn));
 
-            var lastTenMessages = history.TakeLast(10);
-            foreach (var message in lastTenMessages)
+            foreach (var message in history)
             {
                 if (message.SenderDisplayName == "Bot" || message.SenderDisplayName == "VoiceBot")
                 {
@@ -173,7 +172,7 @@ namespace CustomerSupportServiceSample.Services
             return await GetChatCompletionsAsync(systemPrompt, userPrompt);
         }
 
-        private async Task<string> GetChatCompletionsAsync(string systemPrompt, string userPrompt, int maxTokens = 30)
+        private async Task<string> GetChatCompletionsAsync(string systemPrompt, string userPrompt, int maxTokens = 25)
         {
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
